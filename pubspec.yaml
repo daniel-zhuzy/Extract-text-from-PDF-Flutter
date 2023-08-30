@@ -18,12 +18,12 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.19.6 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  syncfusion_flutter_pdf: ^18.3.53-beta
+  syncfusion_flutter_pdf: ^22.2.11
 
 
   # The following adds the Cupertino Icons font to your application.

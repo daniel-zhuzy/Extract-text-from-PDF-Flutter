@@ -1,3 +1,4 @@
+import 'package:extract_text/gestureWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -40,46 +41,46 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlatButton(
-              child: Text(
-                'Extract all text',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: _extractAllText,
-              color: Colors.blue,
+            gestureDetectorWidget(
+              width: 100,
+              height: 30,
+              onTap: () {
+                _extractAllText;
+              },
+              title: "Extract all text",
             ),
-            FlatButton(
-              child: Text(
-                'Extract text with predefined bounds',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: _extractTextWithBounds,
-              color: Colors.blue,
+            gestureDetectorWidget(
+              width: 100,
+              height: 30,
+              onTap: () {
+                _extractTextWithBounds;
+              },
+              title: "Extract text with predefined bounds",
             ),
-            FlatButton(
-              child: Text(
-                'Extract text from a specific page',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: _extractTextFromSpecificPage,
-              color: Colors.blue,
+            gestureDetectorWidget(
+              width: 100,
+              height: 30,
+              onTap: () {
+                _extractTextFromSpecificPage;
+              },
+              title: "Extract text from a specific page",
             ),
-            FlatButton(
-              child: Text(
-                'Extract text from a range of pages',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: _extractTextFromRangeOfPage,
-              color: Colors.blue,
+            gestureDetectorWidget(
+              width: 100,
+              height: 30,
+              onTap: () {
+                _extractTextFromRangeOfPage;
+              },
+              title: "Extract text from a range of pages",
             ),
-            FlatButton(
-              child: Text(
-                'Extract text with font and style information',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: _extractTextWithFontAndStyleInformation,
-              color: Colors.blue,
-            )
+            gestureDetectorWidget(
+              width: 100,
+              height: 30,
+              onTap: () {
+                _extractTextWithFontAndStyleInformation;
+              },
+              title: "Extract text with font and style information",
+            ),
           ],
         ),
       ),
@@ -222,11 +223,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             actions: [
-              FlatButton(
-                child: Text('Close'),
-                onPressed: () {
+              gestureDetectorWidget(
+                width: 100,
+                height: 30,
+                onTap: () {
                   Navigator.of(context).pop();
                 },
+                title: "Close",
               )
             ],
           );
